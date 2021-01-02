@@ -3,10 +3,10 @@ import './Login.css';
 
 const Login = () => {
     return (
-        <div className="container backgroundStyle">
+        <div className="backgroundStyle">
             <div className="row justify-content-center">
-                <div className="col-md-6 col-lg-6 col-sm-6">
-                    <h5 className="text-center text-white">Login or SingUp</h5>
+                <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
+                    <h4 className="text-center text-white mb-4">Login or SingUp</h4>
                     <form>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
