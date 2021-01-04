@@ -29,7 +29,7 @@ const ForgetPassword = () => {
                             {errors.name && <span className="error text-danger">Email is required</span>}
                         </div>
                         <div className="d-grid gap-2 mt-5">
-                            <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Next"/>
+                            <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Next"/>
                         </div>
                     </form>
 

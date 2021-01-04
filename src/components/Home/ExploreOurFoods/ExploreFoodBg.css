@@ -1,0 +1,19 @@
+.exploreFoodBg{
+    background: #434343;
+
+}
+.foodExploreBtn{
+    width: 90px;
+    height: 40px;
+    background: #FFFFFF;;
+    border-radius: 25px;
+}
+.foodExploreBtn:hover{
+    background: #F53838;
+}
+.searchBar{
+    height: 50px;
+    width: 295px;
+    border-radius: 40px;
+
+}

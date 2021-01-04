@@ -20,14 +20,8 @@ const Login = () => {
 
     return (
         <div className="backgroundStyle text-white">
-            <div className="row justify-content-between">
-                <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <img src={kfcChicken} className="kfcChicken img-fluid" alt="" />
-                </div>
-                <div className="col-3 col-sm-3 col-md-4 col-lg-4 col-xl-4">
-                    <img src={salad} className="salad img-fluid" alt="" />
-                </div>
-            </div>
+            <img src={kfcChicken} className="kfcChicken" alt=""/>
+            <img src={salad} className="salad" alt=""/>
             <div className="row justify-content-center">
                 <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
                     <h4 className="text-center mb-4">Login or SingUp</h4>
@@ -53,7 +47,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="d-grid gap-2">
-                            <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Login" />
+                            <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Login" />
                         </div>
                         <p className="text-center mt-3">Or via social media</p>
                         <div className="row d-flex justify-content-center mt-3">
@@ -64,14 +58,8 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="row justify-content-between">
-                <div className="col-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src={chilliChicken} className="chilliChicken text-right img-fluid" alt="" />
-                </div>
-                <div className="col-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src={friedChicken} className="friedChicken img-fluid" alt="" />
-                </div>
-            </div>
+            <img src={chilliChicken} className="chilliChicken" alt=""/>
+            <img src={friedChicken} className="friedChicken" alt=""/>
         </div>
     );
 };

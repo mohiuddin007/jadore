@@ -2,9 +2,9 @@ import React from 'react';
 import './Navbar.css';
 import logo from '../../../images/HomePageResources/logo.png';
 import union from '../../../images/HomePageResources/Union.png';
-import loveIcon from '../../../images/HomePageResources/love.png';
-import userIcon from '../../../images/HomePageResources/User icon.png';
-import cartIcon from '../../../images/HomePageResources/cart.png';
+import loveIcon from '../../../images/HomePageResources/Group 109.svg';
+import userIcon from '../../../images/HomePageResources/User Panel.svg';
+import cartIcon from '../../../images/HomePageResources/Group 108.svg';
 
 const Navbar = () => {
     return (

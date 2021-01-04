@@ -34,7 +34,7 @@ const CreateNewPassword = () => {
                                 {errors.name && <span className="error text-danger">Password is required</span>}
                             </div>
                             <div className="d-grid gap-2 mt-5">
-                                <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Login"/>
+                                <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Login"/>
                             </div>
                         </form>
 

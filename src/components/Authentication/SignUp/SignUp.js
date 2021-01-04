@@ -56,7 +56,7 @@ const SignUp = () => {
                             </div>
 
                             <div className="d-grid gap-2 mt-5">
-                                <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Sign Up" />
+                                <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Sign Up" />
                             </div>
                             
                         </form>
