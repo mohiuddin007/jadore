@@ -9,12 +9,17 @@ import SignUp from './components/Authentication/SignUp/SignUp';
 import ForgetPassword from './components/Authentication/ForgetPassword/ForgetPassword';
 import CreateNewPassword from './components/Authentication/CreateNewPassword/CreateNewPassword';
 import Verification from './components/Authentication/Verification/Verification';
+import Home from './components/Home/Home/Home';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
         <Route path="/login">
           <Login />
         </Route>
@@ -29,6 +34,9 @@ function App() {
         </Router>
         <Route path="/verification">
           <Verification/>
+        </Route>
+        <Route path="*">
+          <NotFound/>
         </Route>
       </Switch>
     </Router>
