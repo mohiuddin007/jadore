@@ -6,9 +6,9 @@ import HeaderCard from './HeaderCard';
 const Header = () => {
     return (
         <div className="headerStyle text-white">
-            <div className="container">
+            {/* <div className="container"> */}
                 <div className="row pt-5">
-                    <div className="col-md-7 pt-5">
+                    <div className="col-md-5 ml-5 pt-5">
                         <h1 className="textStyle">Good food Brings Good Mood</h1>
                         <p className="fontSize">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est, adipiscing. </p>
                         <div className="row justify-content-center mt-5">
@@ -22,11 +22,11 @@ const Header = () => {
                     </div>
                     <div className="col-md-5">
                         <div className="headerFood">
-                            <img src={headerImg} className="headerImg" alt="" />
+                            <img src={headerImg} className="headerImg img-fluid" alt="" />
                         </div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
             <HeaderCard/>
         </div>
     );

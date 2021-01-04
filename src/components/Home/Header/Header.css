@@ -21,20 +21,18 @@
     font-size: 30px;
 }
 .headerFood{
-    /* position: absolute; */
-    width: 1087px;
-    height: 615px;
-    /* left: 1076px; */
-    /* top: 995px; */
-
     background: #FE043C;
-    border-radius: 374px;
+    width: 720px;
+    height: 615px;
+    border-top-left-radius: 45%;
+    border-bottom-left-radius: 45%;
+    /* border-radius: 374px; */
     /* transform: rotate(-90deg); */
 }
 .headerImg{
     position: absolute;
-    width: 800.88px;
-    height: 793.88px;
-    /* left: 1064.38px; */
-    top: -90px;
+    width: 800px;
+    /* height: 793.88px;
+    left: 1064.38px;
+    top: -90px;  */
 }
