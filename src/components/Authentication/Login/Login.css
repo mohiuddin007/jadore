@@ -14,3 +14,53 @@
     box-sizing: border-box;
     border-radius: 12px;
 }
+.kfcChicken{
+    position: absolute;
+    height: 350px;
+    left: -100px;
+    top: -20px;
+}
+.salad{
+    position: absolute;
+    height: 250px;
+    left: 1025px;
+    top: -50px; 
+}
+.chilliChicken{
+    position: absolute;
+    height: 250px;
+    left: -30px;
+    top: 382px;
+}
+.friedChicken{
+    position: absolute;
+    width: 200px;
+    left: 1130px;
+    top: 382px;
+}
+@media screen and (max-width: 400px) {
+    .kfcChicken{
+        position: absolute;
+        height: 180px;
+        left: -20px;
+        top: -20px;
+    }
+    .salad{
+        position: absolute;
+        height: 150px;
+        left: 188px;
+        top: -50px; 
+    }
+    .chilliChicken{
+        position: absolute;
+        height: 250px;
+        left: -30px;
+        top: 382px;
+    }
+    .friedChicken{
+        position: absolute;
+        width: 150px;
+        left: 230px;
+        top: 400px;
+    }
+  }

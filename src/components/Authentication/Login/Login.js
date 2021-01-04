@@ -2,10 +2,19 @@ import React from 'react';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import fbLogo from "../../../images/LoginPage/facebook.svg";
+import googleLogo from '../../../images/LoginPage/google.svg';
+import { Link } from 'react-router-dom';
+import chilliChicken from '../../../images/LoginPage/kisspng-chilli-chicken-chicken-nugget-chili-pepper-free-spicy-shredded-chicken-pull-png-image-5a694f269b66d3 1.png';
+import friedChicken from '../../../images/LoginPage/PngJoy_kfc-bucket-crispy-fried-chicken-png-download_9851047 1.png';
+import salad from '../../../images/LoginPage/IMGBIN_greek-salad-vegetable-greek-cuisine-stock-photography-png_CeXLnZBK 1.png';
+import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-chicken-png-png-download_7322209 2.png';
 
 const Login = () => {
     return (
         <div className="backgroundStyle text-white">
+            <img src={kfcChicken} className="kfcChicken" alt=""/>
+            <img src={salad} className="salad" alt=""/>
             <div className="container">
             <div className="row justify-content-center">
                 <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
@@ -21,22 +30,27 @@ const Login = () => {
                         </div>
                         <div className="row justify-content-end">
                             <div className="col-md-4">
+                                <Link to="/forgetPassword">
                                 <p className="text-danger">Forgot password?</p>
+                                </Link>
+                                
                             </div>
                         </div>
                         <div className="d-grid gap-2">
-                            <button className="btn btn-danger rounded-pill py-3" type="button"><b>Login</b> </button>
+                            <button className="btn btn-danger rounded-pill py-2" type="button"><b>Login</b> </button>
                         </div>
                         <p className="text-center mt-3">Or via social media</p>
                         <div className="row d-flex justify-content-center mt-3">
-                            <div className="col-md-2"><img src="https://i.ibb.co/Nj1NRdn/download.png" className="logo" alt="" /> </div>
-                            <div className="col-md-2"> <img src="https://i.ibb.co/r75nsLd/google.png" className="logo" alt="" /></div>
+                            <div className="col-3 text-end"><img src={fbLogo} className="logo" alt="" /> </div>
+                            <div className="col-3"> <img src={googleLogo} className="logo" alt="" /></div>
                         </div>
-                        <p className="text-center mt-3">Dont have an account? <span className="text-danger">Sign Up</span></p>
+                        <p className="text-center mt-3">Dont have an account? <Link to="/signUp"><span className="text-danger" style={{textDecoration:'none'}}>Sign Up</span></Link></p>
                     </form>
                 </div>
             </div>
             </div>
+            <img src={chilliChicken} className="chilliChicken" alt=""/>
+            <img src={friedChicken} className="friedChicken" alt=""/>
         </div>
     );
 };
