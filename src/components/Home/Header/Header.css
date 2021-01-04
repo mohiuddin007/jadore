@@ -1,0 +1,40 @@
+.orderBtn{
+    background: #F53838;
+    width: 190px;
+    height: 55px;
+    border-radius: 40px;
+}
+.bookBtn{
+    background: #FFFFFF;
+    width: 190px;
+    height: 55px;
+    border-radius: 40px;
+}
+.headerStyle{
+    background: #181818;
+    height: 2000px;
+}
+.textStyle{
+    font-size: 60px;
+}
+.fontSize{
+    font-size: 30px;
+}
+.headerFood{
+    /* position: absolute; */
+    width: 1087px;
+    height: 615px;
+    /* left: 1076px; */
+    /* top: 995px; */
+
+    background: #FE043C;
+    border-radius: 374px;
+    /* transform: rotate(-90deg); */
+}
+.headerImg{
+    position: absolute;
+    width: 800.88px;
+    height: 793.88px;
+    /* left: 1064.38px; */
+    top: -90px;
+}

@@ -1,0 +1,13 @@
+.logo{
+    height: 59px;
+
+}
+.icon{
+    width: 30px;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.navbarBg{
+    background: #181818;
+}

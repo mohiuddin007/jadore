@@ -20,9 +20,14 @@ const Login = () => {
 
     return (
         <div className="backgroundStyle text-white">
-            <img src={kfcChicken} className="kfcChicken" alt=""/>
-            <img src={salad} className="salad" alt=""/>
-            <div className="container">
+            <div className="row justify-content-between">
+                <div className="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <img src={kfcChicken} className="kfcChicken img-fluid" alt="" />
+                </div>
+                <div className="col-3 col-sm-3 col-md-4 col-lg-4 col-xl-4">
+                    <img src={salad} className="salad img-fluid" alt="" />
+                </div>
+            </div>
             <div className="row justify-content-center">
                 <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
                     <h4 className="text-center mb-4">Login or SingUp</h4>
@@ -30,38 +35,43 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" class="form-label"><FontAwesomeIcon icon={faEnvelope} />  Email address</label>
-                            <input type="email" name="email" className="form-control inputBox" id="exampleInputEmail1" placeholder="example@email.com" ref={register({ required: true })}/>
+                            <input type="email" name="email" className="form-control inputBox" id="exampleInputEmail1" placeholder="example@email.com" ref={register({ required: true })} />
                             {errors.name && <span className="error text-danger">Email is required</span>}
                         </div>
 
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Password</label>
-                            <input type="password" name="password" className="form-control inputBox" placeholder="Write a password" ref={register({ required: true })}/>
+                            <input type="password" name="password" className="form-control inputBox" placeholder="Write a password" ref={register({ required: true })} />
                             {errors.name && <span className="error text-danger">Password is required</span>}
                         </div>
 
                         <div className="row justify-content-end">
                             <div className="col-md-4">
                                 <Link to="/forgetPassword">
-                                <p className="text-danger">Forgot password?</p>
+                                    <p className="text-danger">Forgot password?</p>
                                 </Link>
                             </div>
                         </div>
                         <div className="d-grid gap-2">
-                            <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Login"/>
+                            <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Login" />
                         </div>
                         <p className="text-center mt-3">Or via social media</p>
                         <div className="row d-flex justify-content-center mt-3">
                             <div className="col-3 text-end"><img src={fbLogo} className="logo" alt="" /> </div>
                             <div className="col-3"> <img src={googleLogo} className="logo" alt="" /></div>
                         </div>
-                        <p className="text-center mt-3">Dont have an account? <Link to="/signUp"><span className="text-danger" style={{textDecoration:'none'}}>Sign Up</span></Link></p>
+                        <p className="text-center mt-3">Dont have an account? <Link to="/signUp"><span className="text-danger" style={{ textDecoration: 'none' }}>Sign Up</span></Link></p>
                     </form>
                 </div>
             </div>
+            <div className="row justify-content-between">
+                <div className="col-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src={chilliChicken} className="chilliChicken text-right img-fluid" alt="" />
+                </div>
+                <div className="col-4 col-sm-4 col-md-4 col-lg-4">
+                    <img src={friedChicken} className="friedChicken img-fluid" alt="" />
+                </div>
             </div>
-            <img src={chilliChicken} className="chilliChicken" alt=""/>
-            <img src={friedChicken} className="friedChicken" alt=""/>
         </div>
     );
 };

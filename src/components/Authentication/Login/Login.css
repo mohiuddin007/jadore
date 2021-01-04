@@ -38,29 +38,84 @@
     left: 1130px;
     top: 382px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px){
     .kfcChicken{
         position: absolute;
-        height: 180px;
+        height: 130px;
         left: -20px;
         top: -20px;
     }
     .salad{
         position: absolute;
-        height: 150px;
+        height: 130px;
         left: 188px;
         top: -50px; 
     }
     .chilliChicken{
         position: absolute;
-        height: 250px;
+        height: 130px;
         left: -30px;
-        top: 382px;
+        top: 500px;
     }
     .friedChicken{
         position: absolute;
-        width: 150px;
+        width: 100px;
+        height: 150px;
         left: 230px;
-        top: 400px;
+        top: 490px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .kfcChicken{
+        position: absolute;
+        height: 130px;
+        left: -20px;
+        top: -20px;
+    }
+    .salad{
+        position: absolute;
+        height: 130px;
+        left: 150px;
+        top: -50px; 
+    }
+    .chilliChicken{
+        position: absolute;
+        height: 130px;
+        left: -30px;
+        top: 500px;
+    }
+    .friedChicken{
+        position: absolute;
+        width: 100px;
+        height: 150px;
+        left: 230px;
+        top: 490px;
+    }
+  }
+  @media screen and (max-width: 425px){
+    .kfcChicken{
+        position: absolute;
+        height: 130px;
+        left: -20px;
+        top: -20px;
+    }
+    .salad{
+        position: absolute;
+        height: 130px;
+        left: 188px;
+        top: -50px; 
+    }
+    .chilliChicken{
+        position: absolute;
+        height: 130px;
+        left: -30px;
+        top: 500px;
+    }
+    .friedChicken{
+        position: absolute;
+        width: 100px;
+        height: 150px;
+        left: 290px;
+        top: 490px;
     }
   }
