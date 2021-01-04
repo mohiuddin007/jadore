@@ -9,8 +9,15 @@ import chilliChicken from '../../../images/LoginPage/kisspng-chilli-chicken-chic
 import friedChicken from '../../../images/LoginPage/PngJoy_kfc-bucket-crispy-fried-chicken-png-download_9851047 1.png';
 import salad from '../../../images/LoginPage/IMGBIN_greek-salad-vegetable-greek-cuisine-stock-photography-png_CeXLnZBK 1.png';
 import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-chicken-png-png-download_7322209 2.png';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
+    const { register, handleSubmit, watch, errors } = useForm();
+
+    const onSubmit = (data, event) => {
+        console.log(data)
+    };
+
     return (
         <div className="backgroundStyle text-white">
             <img src={kfcChicken} className="kfcChicken" alt=""/>
@@ -19,25 +26,29 @@ const Login = () => {
             <div className="row justify-content-center">
                 <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
                     <h4 className="text-center mb-4">Login or SingUp</h4>
-                    <form>
+
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
                             <label for="exampleInputEmail1" class="form-label"><FontAwesomeIcon icon={faEnvelope} />  Email address</label>
-                            <input type="email" className="form-control inputBox" id="exampleInputEmail1" placeholder="example@email.com" />
+                            <input type="email" name="email" className="form-control inputBox" id="exampleInputEmail1" placeholder="example@email.com" ref={register({ required: true })}/>
+                            {errors.name && <span className="error text-danger">Email is required</span>}
                         </div>
+
                         <div className="mb-3">
                             <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Password</label>
-                            <input type="password" className="form-control inputBox" placeholder="Write a password" />
+                            <input type="password" name="password" className="form-control inputBox" placeholder="Write a password" ref={register({ required: true })}/>
+                            {errors.name && <span className="error text-danger">Password is required</span>}
                         </div>
+
                         <div className="row justify-content-end">
                             <div className="col-md-4">
                                 <Link to="/forgetPassword">
                                 <p className="text-danger">Forgot password?</p>
                                 </Link>
-                                
                             </div>
                         </div>
                         <div className="d-grid gap-2">
-                            <button className="btn btn-danger rounded-pill py-2" type="button"><b>Login</b> </button>
+                            <input className="btn btn-danger rounded-pill py-2" type="submit" defaultValue="Login"/>
                         </div>
                         <p className="text-center mt-3">Or via social media</p>
                         <div className="row d-flex justify-content-center mt-3">
