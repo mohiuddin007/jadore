@@ -1,0 +1,16 @@
+.backgroundStyle{
+    background: #3a3939;
+    padding-top: 80px;
+    height: 625px;
+}
+.logo{
+    height: 40px;
+    border-radius: 50%;
+}
+.inputBox{
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
