@@ -1,0 +1,15 @@
+.card{
+    border-radius: 25px;
+}
+.card-img{
+background: #D56803;
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+
+}
+.card-footer-text{
+    background: #181818;
+}
+.card-img-top{
+    height: 250px;
+}

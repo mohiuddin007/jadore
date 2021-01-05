@@ -1,7 +1,7 @@
 .backgroundStyle{
     background: #3a3939;
     padding-top: 80px;
-    height: 625px;
+    padding-bottom: 80px;
 }
 .logo{
     height: 40px;
@@ -37,8 +37,8 @@
     width: 200px;
     left: 1130px;
     top: 382px;
-}
-@media screen and (max-width: 768px){
+} 
+ @media screen and (max-width: 768px){
     .kfcChicken{
         position: absolute;
         height: 130px;
@@ -75,7 +75,7 @@
     .salad{
         position: absolute;
         height: 130px;
-        left: 150px;
+        left: 100px;
         top: -50px; 
     }
     .chilliChicken{
@@ -88,7 +88,7 @@
         position: absolute;
         width: 100px;
         height: 150px;
-        left: 230px;
+        left: 200px;
         top: 490px;
     }
   }

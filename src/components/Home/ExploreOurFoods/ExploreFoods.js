@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ExploreFoodBg.css';
+import FoodsData from './FoodsData';
 
 const ExploreFoods = () => {
+const [foods, setFoods] = useState([]);
+
+const first6Food = foods.slice(0, 6);
+
+useEffect(()=>{
+    fetch('https://hot-onion.herokuapp.com/api/v1/foods')
+    .then(res => res.json())
+    .then(data => {
+        setFoods(data.data.foods);
+    })
+},[])
+
     return (
         <div className="exploreFoodBg text-white">
             <div className="container pt-5">
@@ -15,6 +28,11 @@ const ExploreFoods = () => {
                    <input type="text" className="form-control ml-auto searchBar " placeholder="Search Your Food" />
                 </div>
             </div>
+                <div className="row justify-content-center">
+                    {
+                        first6Food.map(data => <FoodsData data={data} key={data._id}/>)
+                    }
+                </div>
         </div>
     );
 };

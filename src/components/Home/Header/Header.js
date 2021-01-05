@@ -20,10 +20,9 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-5">
-                        <div className="headerFood">
+                    <div className="col-md-5 ml-auto headerFood">
                             <img src={headerImg} className="headerImg img-fluid" alt="" />
-                        </div>
+                            
                     </div>
                 </div>
             {/* </div> */}

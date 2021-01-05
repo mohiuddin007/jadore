@@ -20,9 +20,10 @@ const Login = () => {
 
     return (
         <div className="backgroundStyle text-white">
-            <img src={kfcChicken} className="kfcChicken" alt=""/>
-            <img src={salad} className="salad" alt=""/>
+            <img src={kfcChicken} className="kfcChicken rounded float-left" alt=""/>
+            <img src={salad} className="salad rounded float-right" alt=""/>
             <div className="row justify-content-center">
+            
                 <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
                     <h4 className="text-center mb-4">Login or SingUp</h4>
 
@@ -57,9 +58,10 @@ const Login = () => {
                         <p className="text-center mt-3">Dont have an account? <Link to="/signUp"><span className="text-danger" style={{ textDecoration: 'none' }}>Sign Up</span></Link></p>
                     </form>
                 </div>
+                
             </div>
-            <img src={chilliChicken} className="chilliChicken" alt=""/>
-            <img src={friedChicken} className="friedChicken" alt=""/>
+            <img src={chilliChicken} className="chilliChicken rounded float-left" alt=""/>
+            <img src={friedChicken} className="friedChicken rounded float-right" alt=""/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -6,34 +6,60 @@ import chilliChicken from '../../../images/LoginPage/kisspng-chilli-chicken-chic
 import friedChicken from '../../../images/LoginPage/PngJoy_kfc-bucket-crispy-fried-chicken-png-download_9851047 1.png';
 import salad from '../../../images/LoginPage/IMGBIN_greek-salad-vegetable-greek-cuisine-stock-photography-png_CeXLnZBK 1.png';
 import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-chicken-png-png-download_7322209 2.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+// import 'iziToast-master/dist/css/iziToast.min.css';
+// import iziToast from 'iziToast-master/dist/js/iziToast.min.js';
 
 const SignUp = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
     
+    const { register, handleSubmit, watch, errors } = useForm();
+    const [newUserInfo, setNewUserInfo] = useState({});
+    const history = useHistory();
+    console.log(newUserInfo);
+       
     const onSubmit = (data, event) => {
-        console.log(data)
-    };
+        const newUser = {...data}
+        fetch('http://backendjadore.softifydigital.com/api/usersignup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newUser)
+        })
+        .then(res => res.json())
+        .then(data=>{
+            setNewUserInfo(data)
+            
+        })
+    }
+
+    const handleClick = () => {
+          if(newUserInfo.status == true ){
+              history.push('/login')
+          }
+    
+    }
 
     return (
-        <div className="backgroundStyle text-white" style={{ height: "700px" }}>
+        <div className="backgroundStyle text-white">
             <img src={kfcChicken} className="kfcChicken" alt="" />
             <img src={salad} className="salad" alt="" />
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5">
-                        <h4 className="text-center mb-4">Sing Up</h4>
-
+                        <h4 className="text-center mb-4">Sign Up</h4>
+                        <br/>
+                        {
+                                newUserInfo.status == false &&  <p className="text-danger bg-white text-center">{newUserInfo.message}</p>
+                            }
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" class="form-label"><FontAwesomeIcon icon={faUser} />  User Name</label>
-                                <input type="name" name="userName" className="form-control inputBox" id="exampleInputEmail1" placeholder="Your Name" ref={register({ required: true })} />
+                                <input type="name" name="username" className="form-control inputBox" id="exampleInputEmail1" placeholder="Your Name" ref={register({ required: true })} />
                                 {errors.name && <span className="error">Name is required</span>}
                             </div>
 
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" class="form-label"><FontAwesomeIcon icon={faPhone} />  Phone</label>
-                                <input type="number" name="phoneNumber" className="form-control inputBox" id="exampleInputEmail1" placeholder="Enter your phone number" ref={register({ required: true })} />
+                                <input type="text" name="phone" className="form-control inputBox" id="exampleInputEmail1" placeholder="Enter your phone number" ref={register({ required: true })} />
                                 {errors.name && <span className="error">Phone number is required</span>}
                             </div>
 
@@ -56,11 +82,14 @@ const SignUp = () => {
                             </div>
 
                             <div className="d-grid gap-2 mt-5">
-                                <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Sign Up" />
+                                <input className="btn btn-danger btn-block rounded-pill py-2" onClick={()=> handleClick()} type="submit" defaultValue="Sign Up" />
                             </div>
                             
                         </form>
                         <p className="text-center mt-3">Already have an account? <Link to="/login"><span className="text-danger">Login</span></Link></p>
+                       
+                           
+                       
                     </div>
                 </div>
             </div>
