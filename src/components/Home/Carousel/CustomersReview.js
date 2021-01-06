@@ -22,16 +22,22 @@ const breakPoints = [
     { width: 1200, itemsToShow: 4 }
   ];
     return (
-        <div className="container text-center">
-            <h1 className="text-center">Trusted by Thousands of Happy CustomerS</h1>
-            <p>These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
+        <div className="darkBg">
+ <div className="container pt-5  text-center">
+            <h2 className="text-center">Trusted by Thousands of Happy CustomerS</h2>
+            <p className="mt-4">These are the stories of our customers who have joined us with great pleasure when using this crazy feature.</p>
+            <div className="mt-5 pb-5">
             <Carousel breakPoints={breakPoints}>
                 {
                     first9Review.map((review) => <ReviewCard review={review}/>)
                 }
                 
             </Carousel>
+            </div>
+            
         </div>
+        </div>
+       
     );
 };
 
