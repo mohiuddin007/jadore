@@ -8,9 +8,7 @@ import salad from '../../../images/LoginPage/IMGBIN_greek-salad-vegetable-greek-
 import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-chicken-png-png-download_7322209 2.png';
 import { Link, useHistory } from 'react-router-dom';
 import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
-// import 'iziToast-master/dist/css/iziToast.min.css';
-// import iziToast from 'iziToast-master/dist/js/iziToast.min.js';
+import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
 
@@ -35,10 +33,12 @@ const SignUp = () => {
             console.log("data",data)
             setNewUserInfo(data)
             if(newUserInfo.status == true ){
-                
+                setTimeout(()=>{
+                    history.push('/login')
+                }, 5000);
               
-                // toast('Registration Success')
-                window.location.href('http://localhost:3000/login')
+                toast('Registration Success')
+               
                 console.log('Registration Success')
                 
             }
