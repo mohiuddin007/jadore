@@ -1,11 +1,10 @@
 .logo{
-    height: 59px;
+    height: 69px;
 
 }
 .icon{
-    width: 30px;
+    height: 30px;
     background: white;
-    padding: 5px;
     border-radius: 50%;
 }
 .navbarBg{

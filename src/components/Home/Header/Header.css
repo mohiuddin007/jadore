@@ -20,19 +20,29 @@
 .fontSize{
     font-size: 30px;
 }
+@media screen and (max-width: 570px) {
+    .textStyle{
+        font-size: 30px;
+    }
+    .fontSize{
+        font-size: 20px;
+    }
+  }
+
 .headerFood{
     background: #FE043C;
-    /* width: 720px; */
-    height: 600px; 
+    height: 500px; 
     border-top-left-radius: 45%;
     border-bottom-left-radius: 45%;
-    /* border-radius: 374px; */
-    /* transform: rotate(-90deg); */
+}
+@media screen and (max-width: 570px) {
+    .headerFood{
+        height: 350px;
+    }
 }
 .headerImg{
-    position: absolute;
-    width: 800px;
-    /* height: 793.88px;
-    left: 1064.38px;
-    top: -90px;  */
+    /* position: absolute; */
+    /* width: 700px; */
+    /* height: 500px; */
+    
 }

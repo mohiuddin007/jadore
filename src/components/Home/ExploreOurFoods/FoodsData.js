@@ -6,12 +6,10 @@ const FoodsData = (props) => {
     const { img, title, price } = props.data;
     console.log(props.data)
     return (
-        <div className="col-md-3 mt-5 mx-4">
-            <div className="row card">
-                <div className="card-img">
+        <div className="col-10 col-sm-10 col-md-4 mt-5 mx-auto">
+            <div className="card cardStyles">
                     <img src={img} className="card-img-top img-fluid" alt="" />
-                </div>
-                <div class="card-footer card-footer-text">
+                <div class="card-body cardBodyStyles">
                     <div className="row">
                         <div className="col-8">
                             <h6 className="card-title text-left">{title}</h6>
