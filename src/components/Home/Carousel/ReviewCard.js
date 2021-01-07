@@ -6,14 +6,14 @@ import './ReviewCard.css';
 const ReviewCard = ({review}) => {
     console.log(review)
     return (
-        <div className="reviewCard text-white">
+        <div className="reviewCard text-white m-sm-0 m-md-2">
             <div className="container p-3">
             <div className="row">
                 <div className="col-8">
                 <img src={review.img} className="reviewImg" alt=""/> <span>Yessica Christy</span>
                 </div>
                  <div className="col-4">
-                     <span>5.0</span>  <FontAwesomeIcon icon={faStar} className="star"/>
+                     <span>5.0</span> <FontAwesomeIcon icon={faStar} className="star"/>
                  </div>
 
             </div>

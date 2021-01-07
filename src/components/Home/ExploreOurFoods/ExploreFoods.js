@@ -16,22 +16,27 @@ useEffect(()=>{
 },[])
 
     return (
-        <div className="exploreFoodBg text-white">
+        <div className="exploreFoodBg pb-5 text-white">
             <div className="container pt-5">
                 <h4>Explore Our Foods</h4>
                 <div className="row mt-5 ">
-                   <button className="btn ml-2 foodExploreBtn">All</button>
-                   <button className="btn ml-2 foodExploreBtn">Lunch</button>
-                   <button className="btn ml-2 foodExploreBtn">Dinner</button>
-                   <button className="btn ml-2 foodExploreBtn">Snacks</button>
-                   <button className="btn ml-2 foodExploreBtn">Drink</button>
+                    <div className="col-2"><button className="btn ml-2 foodExploreBtn">All</button></div>
+                    <div className="col-2"><button className="btn ml-2 foodExploreBtn">Lunch</button></div>
+                    <div className="col-2"><button className="btn ml-2 foodExploreBtn">Dinner</button></div>
+                    <div className="col-2"> <button className="btn ml-2 foodExploreBtn">Snacks</button></div>
+                    <div className="col-2"><button className="btn ml-2 foodExploreBtn">Drink</button></div>
                    <input type="text" className="form-control ml-auto searchBar " placeholder="Search Your Food" />
                 </div>
             </div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center pb-5">
                     {
                         first6Food.map(data => <FoodsData data={data} key={data._id}/>)
                     }
+                </div>
+                <div className="row justify-content-end">
+                    <div className="col-4 text-center">
+                     <button className="btn btn-light rounded-pill text-danger px-4">See All</button>
+                    </div>
                 </div>
         </div>
     );
