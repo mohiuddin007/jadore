@@ -7,7 +7,7 @@ import FoodsData from './FoodsData';
 const ExploreFoods = () => {
 const [foods, setFoods] = useState([]);
 
-const first6Food = foods.slice(0, 6);
+const first8Food = foods.slice(0, 8);
 
 useEffect(()=>{
     fetch('https://hot-onion.herokuapp.com/api/v1/foods')
@@ -34,7 +34,7 @@ useEffect(()=>{
                 <div className="container">
                 <div className="row justify-content-center pb-5">
                     {
-                        first6Food.map(data => <FoodsData data={data} key={data._id}/>)
+                        first8Food.map(data => <FoodsData data={data} key={data._id}/>)
                     }
                 </div>
                 </div>

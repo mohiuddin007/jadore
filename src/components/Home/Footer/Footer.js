@@ -22,7 +22,7 @@ const Footer = () => {
                         <img src={twitterLogo} className="socialLogo" alt="" />
                         <img src={instagramLogo} className="socialLogo" alt="" />
                     </div>
-                    <p className="mt-4">©2020 Jadore Manger</p>
+                   
                 </div>
                 <div className="col-md-2 col-6 mt-3 text-center order-3 order-md-2">
                     <h5>Products</h5>
@@ -60,6 +60,7 @@ const Footer = () => {
 
                 </div>
             </div>
+            <p className="mt-4 text-center">©2021 Jadore Manger by <a href="https://www.softifydigital.com/" className="text-white">Softify Digital.</a>  All rights reserved.</p>
         </div>
     );
 };

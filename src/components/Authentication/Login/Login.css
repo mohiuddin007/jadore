@@ -1,7 +1,6 @@
 .backgroundStyle{
     background: #3a3939;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 25px;
 }
 .logo{
     height: 40px;
@@ -15,107 +14,36 @@
     border-radius: 12px;
 }
 .kfcChicken{
-    position: absolute;
-    height: 350px;
-    left: -100px;
-    top: -20px;
+    height: 250px;
+}
+@media screen and (max-width: 570px) {
+    .kfcChicken{
+        height: 80px;
+    } 
 }
 .salad{
-    position: absolute;
-    height: 250px;
-    left: 1025px;
-    top: -50px; 
+    height: 250px; 
+}
+@media screen and (max-width: 570px) {
+    .salad{
+        height: 80px; 
+    }
 }
 .chilliChicken{
-    position: absolute;
     height: 250px;
-    left: -30px;
-    top: 382px;
+}
+@media screen and (max-width: 570px){
+    .chilliChicken{
+        height: 70px;
+        margin-left: 240px;
+    }
 }
 .friedChicken{
-    position: absolute;
     width: 200px;
-    left: 1130px;
-    top: 382px;
 } 
- @media screen and (max-width: 768px){
-    .kfcChicken{
-        position: absolute;
-        height: 130px;
-        left: -20px;
-        top: -20px;
-    }
-    .salad{
-        position: absolute;
-        height: 130px;
-        left: 188px;
-        top: -50px; 
-    }
-    .chilliChicken{
-        position: absolute;
-        height: 130px;
-        left: -30px;
-        top: 500px;
-    }
+@media screen and (max-width: 570px){
     .friedChicken{
-        position: absolute;
-        width: 100px;
-        height: 150px;
-        left: 230px;
-        top: 490px;
+        width: 80px;
+        margin-right: 180px;
     }
-  }
-  @media screen and (max-width: 320px) {
-    .kfcChicken{
-        position: absolute;
-        height: 130px;
-        left: -20px;
-        top: -20px;
-    }
-    .salad{
-        position: absolute;
-        height: 130px;
-        left: 100px;
-        top: -50px; 
-    }
-    .chilliChicken{
-        position: absolute;
-        height: 130px;
-        left: -30px;
-        top: 500px;
-    }
-    .friedChicken{
-        position: absolute;
-        width: 100px;
-        height: 150px;
-        left: 200px;
-        top: 490px;
-    }
-  }
-  @media screen and (max-width: 425px){
-    .kfcChicken{
-        position: absolute;
-        height: 130px;
-        left: -20px;
-        top: -20px;
-    }
-    .salad{
-        position: absolute;
-        height: 130px;
-        left: 188px;
-        top: -50px; 
-    }
-    .chilliChicken{
-        position: absolute;
-        height: 130px;
-        left: -30px;
-        top: 500px;
-    }
-    .friedChicken{
-        position: absolute;
-        width: 100px;
-        height: 150px;
-        left: 290px;
-        top: 490px;
-    }
-  }
+}

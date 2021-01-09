@@ -11,6 +11,8 @@ import CreateNewPassword from './components/Authentication/CreateNewPassword/Cre
 import Verification from './components/Authentication/Verification/Verification';
 import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import Products from './components/Products/Product/Products';
+import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
 
 
 function App() {
@@ -19,6 +21,12 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home/>
+        </Route>
+        <Route path="/products">
+          <Products/>
+        </Route>
+        <Route path="/deliveryAddress">
+          <DeliveryAddress/>
         </Route>
         <Route path="/login">
           <Login />

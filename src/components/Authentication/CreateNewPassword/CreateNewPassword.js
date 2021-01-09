@@ -15,34 +15,36 @@ const CreateNewPassword = () => {
     };
     return (
         <div className="backgroundStyle text-white">
-            <img src={kfcChicken} className="kfcChicken" alt=""/>
-            <img src={salad} className="salad" alt=""/>
-            <div className="container">
-                <div className="row justify-content-center pt-5">
-                    <div className="col-8 col-sm-8 col-md-5 col-lg-5 col-xl-5 pt-5">
-                        <h4 className="text-center mb-5">Create New Password</h4>
+            <div className="row justify-content-center pb-5 pt-2">
+                <div className="col-md-3">
+                    <img src={kfcChicken} className="kfcChicken rounded float-left" alt="" />
+                    <img src={chilliChicken} className="chilliChicken rounded float-left" alt="" />
+                </div>
+                <div className="col-md-6 pt-md-5">
+                    <h4 className="text-center mb-5 pt-md-5">Create New Password</h4>
 
-                        <form className="mt-3" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Password</label>
-                                <input type="password" name="password" className="form-control inputBox" placeholder="Write a password" ref={register({ required: true })}/>
-                                {errors.name && <span className="error text-danger">Password is required</span>}
-                            </div>
-                            <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Re-Enter Password</label>
-                                <input type="password" name="Re-Enter Password" className="form-control inputBox" placeholder="Write again the password" ref={register({ required: true })}/>
-                                {errors.name && <span className="error text-danger">Password is required</span>}
-                            </div>
-                            <div className="d-grid gap-2 mt-5">
-                                <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Login"/>
-                            </div>
-                        </form>
+                    <form className="mt-3" onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-3">
+                            <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Password</label>
+                            <input type="password" name="password" className="form-control inputBox" placeholder="Write a password" ref={register({ required: true })} />
+                            {errors.name && <span className="error text-danger">Password is required</span>}
+                        </div>
+                        <div className="mb-3">
+                            <label for="exampleInputPassword1" className="form-label"><FontAwesomeIcon icon={faLock} />  Re-Enter Password</label>
+                            <input type="password" name="Re-Enter Password" className="form-control inputBox" placeholder="Write again the password" ref={register({ required: true })} />
+                            {errors.name && <span className="error text-danger">Password is required</span>}
+                        </div>
+                        <div className="d-grid gap-2 mt-5">
+                            <input className="btn btn-danger btn-block rounded-pill py-2" type="submit" defaultValue="Login" />
+                        </div>
+                    </form>
+                </div>
+                <div className="col-md-3">
+                    <img src={salad} className="salad rounded float-right" alt="" />
 
-                    </div>
+                    <img src={friedChicken} className="friedChicken rounded float-right" alt="" />
                 </div>
             </div>
-            <img src={chilliChicken} className="chilliChicken" alt=""/>
-            <img src={friedChicken} className="friedChicken" alt=""/>
         </div>
     );
 };
