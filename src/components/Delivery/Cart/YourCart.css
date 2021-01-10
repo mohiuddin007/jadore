@@ -1,0 +1,13 @@
+.yourCartImg{
+    height: 200px;
+    
+}
+.cartImgBorder{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.yourCartBody{
+    background: #181818;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
