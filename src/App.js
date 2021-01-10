@@ -13,6 +13,7 @@ import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/Products/Product/Products';
 import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
+import DeliveryTimeAndCost from './components/Delivery/Checkout/DeliveryTimeAndCost';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/deliveryAddress">
           <DeliveryAddress/>
+        </Route>
+        <Route path="/deliveryTimeAndCost">
+          <DeliveryTimeAndCost/>
         </Route>
         <Route path="/login">
           <Login />

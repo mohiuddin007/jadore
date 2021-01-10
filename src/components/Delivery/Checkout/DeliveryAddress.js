@@ -2,6 +2,7 @@ import React from 'react';
 import './DeliveryAddress.css';
 import Navbar from '../../Home/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
+import Cart from '../Cart/Cart';
 
 const DeliveryAddress = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -15,7 +16,7 @@ const DeliveryAddress = () => {
             <div className="container">
                 <div className="row justify-content-around">
                     <div className="col-md-7">
-                        <div className="row mt-5">
+                        <div className="row mt-5 ml-3">
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
                                 <label className="form-check-label" for="exampleRadios1">
@@ -28,7 +29,7 @@ const DeliveryAddress = () => {
                                     Delivery time & cost
                                 </label>
                             </div>
-                            <div className="form-check ml-4">
+                            <div className="form-check ml-5">
                                 <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
                                 <label className="form-check-label" for="exampleRadios1">
                                     Payment Policy
@@ -38,7 +39,7 @@ const DeliveryAddress = () => {
                         <h2 className="mt-5">Address</h2>
                         <div className="row justify-content-between mt-2">
                             <div className="col-6">Please enter your delevery address</div>
-                            <div className="col-3">Step 1 of 3</div>
+                            <div className="col-4">Step 1 of 3</div>
                         </div>
 
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,7 +54,7 @@ const DeliveryAddress = () => {
                                 <div className="col-6">
                                     <div className="mb-3">
                                         <label for="exampleInputEmail1" class="form-label"> First name</label>
-                                        <input type="email" name="firstName" className="form-control inputBox" id="exampleInputEmail1" placeholder="First name" ref={register({ required: true })} />
+                                        <input type="text" name="firstName" className="form-control inputBox" id="exampleInputEmail1" placeholder="First name" ref={register({ required: true })} />
                                         {errors.name && <span className="error text-danger">First name is required</span>}
                                     </div>
                                 </div>
@@ -112,8 +113,8 @@ const DeliveryAddress = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="col-md-3 text-center">
-
+                    <div className="col-md-3 text-center mt-5">
+                        <Cart/>
                     </div>
                 </div>
             </div>

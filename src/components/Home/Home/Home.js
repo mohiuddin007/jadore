@@ -9,7 +9,7 @@ import Navbar from '../Navbar/Navbar';
 const Home = () => {
     
     return (
-        <div>
+        <div className="container-fluid">
             <Navbar/>
             <Header/>
             <ExploreFoods/>
