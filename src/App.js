@@ -14,6 +14,7 @@ import NotFound from './components/NotFound/NotFound';
 import Products from './components/Products/Product/Products';
 import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
 import DeliveryTimeAndCost from './components/Delivery/Checkout/DeliveryTimeAndCost';
+import Payment from './components/Delivery/Payment/Payment';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/deliveryTimeAndCost">
           <DeliveryTimeAndCost/>
+        </Route>
+        <Route path="/payment">
+          <Payment/>
         </Route>
         <Route path="/login">
           <Login />
