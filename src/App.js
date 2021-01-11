@@ -46,12 +46,12 @@ function App() {
         <Route path="/signUp">
           <SignUp/>
         </Route>
-        <Router path="/forgetPassword">
+        <Route path="/forgetPassword">
           <ForgetPassword/>
-        </Router>
-        <Router path="/createNewPassword">
+        </Route>
+        <Route path="/createNewPassword">
           <CreateNewPassword/>
-        </Router>
+        </Route>
         <Route path="/verification">
           <Verification/>
         </Route>

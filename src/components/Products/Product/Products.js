@@ -8,12 +8,15 @@ import { PRODUCT_PER_PAGE } from '../Constents/Constents';
 import Pagination from './Pagination';
 
 const Products = () => {
-    const [allProducts, setAllProducts] = useState([]);
+    // state for pagination
+     const [allProducts, setAllProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
-    const [filterProduct, setFilterProduct] = useState('')
+    //state for search and filter
+    const [filterProduct, setFilterProduct] = useState('');
+    const [search, setSearch] = useState('');
     
     useEffect(()=>{
     const fetchProducts = async () => {
@@ -31,6 +34,8 @@ const Products = () => {
     const handleClick = (num) => {
         setCurrentPage(num);
     }
+
+   
     return (
         <div className="productsBg text-white">
             <Navbar/>
@@ -41,7 +46,7 @@ const Products = () => {
                     <button className="btn px-1 px-md-3 ml-3 foodExploreBtn" onClick={ () => setFilterProduct('dinner')}>Dinner</button>
                      <button className="btn px-1 px-md-3 ml-3 foodExploreBtn" onClick={() => setFilterProduct('breakfast')}>Snacks</button>
                     <button className="btn px-1 px-md-3 ml-3 foodExploreBtn" onClick={() => setFilterProduct('lunch')}>Drink</button>
-                   <input type="text" className="form-control ml-auto searchBar mt-5 mt-md-0 mr-md-0 mr-5 mr-sm-5" placeholder="Search Your Food" />
+                   <input type="text" className="form-control ml-auto searchBar mt-5 mt-md-0 mr-md-0 mr-5 mr-sm-5" onChange={e => setSearch(e.target.value)} placeholder="Search Your Food" />
                    {/* <span className="mt-md-2 mr-5"><FontAwesomeIcon icon={faSearch}/></span> */}
                 </div>
             </div>
@@ -49,7 +54,7 @@ const Products = () => {
                 <div className="row justify-content-center pb-5">
                 {
                 loading ? <p>Loading...</p> : <>
-                <ProductMap allProducts={allProducts} currentPage={currentPage} filterProduct={filterProduct}/>
+                <ProductMap allProducts={allProducts} currentPage={currentPage} filterProduct={filterProduct} search={search}/>
                 <Pagination totalPages={totalPages} handleClick={handleClick}/>
                 </>
             }

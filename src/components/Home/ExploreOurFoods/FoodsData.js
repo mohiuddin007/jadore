@@ -19,7 +19,7 @@ const FoodsData = (props) => {
                 <div class="card-body cardBodyStyles">
                     <div className="row">
                         <div className="col-8">
-                            <h6 className="card-title text-left">{title.slice(0, 14)}</h6>
+                            <h6 className="card-title text-left">{title}</h6>
                         </div>
                         <div className="col-4">
                             <h6 className="text-danger text-right">${price}</h6>

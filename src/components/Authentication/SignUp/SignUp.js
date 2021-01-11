@@ -9,6 +9,7 @@ import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-c
 import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from '../../Home/Navbar/Navbar';
 
 toast.configure()
 
@@ -49,6 +50,7 @@ const SignUp = () => {
 
     return (
         <div className="backgroundStyle text-white">
+            <Navbar/>
             <div className="row justify-content-center">
                 <div className="col-md-3">
                     <img src={kfcChicken} className="kfcChicken float-left" alt="" />

@@ -1,6 +1,7 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ExploreFoodBg.css';
 import FoodsData from './FoodsData';
 
@@ -40,7 +41,9 @@ useEffect(()=>{
                 </div>
                 <div className="row justify-content-end">
                     <div className="col-5 text-center">
+                        <Link to="/products">
                      <button className="btn btn-light rounded-pill text-danger px-4">See All</button>
+                     </Link>
                     </div>
                 </div>
         </div>

@@ -6,6 +6,7 @@ import friedChicken from '../../../images/LoginPage/PngJoy_kfc-bucket-crispy-fri
 import salad from '../../../images/LoginPage/IMGBIN_greek-salad-vegetable-greek-cuisine-stock-photography-png_CeXLnZBK 1.png';
 import kfcChicken from '../../../images/LoginPage/PngJoy_kfc-chicken-kfc-fried-chicken-png-png-download_7322209 2.png';
 import { useForm } from 'react-hook-form';
+import Navbar from '../../Home/Navbar/Navbar';
 
 const CreateNewPassword = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -15,6 +16,7 @@ const CreateNewPassword = () => {
     };
     return (
         <div className="backgroundStyle text-white">
+            <Navbar/>
             <div className="row justify-content-center pb-5 pt-2">
                 <div className="col-md-3">
                     <img src={kfcChicken} className="kfcChicken rounded float-left" alt="" />

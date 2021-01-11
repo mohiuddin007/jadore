@@ -13,7 +13,7 @@ const ProductsData = (props) => {
     };
 
     return (
-        <div className="col-10 col-sm-10 col-md-3 mt-5 mx-auto">
+        <div className="col-10 col-sm-10 col-md-3 col-lg-3 mt-5 mx-auto">
             <div className="card cardStyles">
                 <img src={img} className="card-img-top mx-auto d-block img-fluid" alt="" />
                 <div class="card-body cardBodyStyles">
