@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Products.css';
 import Footer from '../../Home/Footer/Footer';
 import Navbar from '../../Home/Navbar/Navbar';
-import ProductsData from './ProductsData';
+import ProductMap from './ProductMap';
+import { PRODUCT_PER_PAGE } from '../Constents/Constents';
+import Pagination from './Pagination';
 
 const Products = () => {
     const [allProducts, setAllProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
     
     useEffect(()=>{
-        fetch('https://hot-onion.herokuapp.com/api/v1/foods')
-        .then(res => res.json())
-        .then(data => {
-            setAllProducts(data.data.foods);
-        })
+    const fetchProducts = async () => {
+        setLoading(true);
+
+        const res = await axios.get('https://hot-onion.herokuapp.com/api/v1/foods')
+        setLoading(false);
+        setAllProducts(res.data.data.foods);
+
+        setTotalPages(Math.ceil(res.data.data.foods.length / PRODUCT_PER_PAGE))
+    }
+    fetchProducts();
     },[])
+
+    const handleClick = (num) => {
+        setCurrentPage(num);
+    }
     return (
         <div className="productsBg text-white">
             <Navbar/>
@@ -30,9 +45,15 @@ const Products = () => {
             </div>
             <div className="container">
                 <div className="row justify-content-center pb-5">
-                    {
+                {
+                loading ? <p>Loading...</p> : <>
+                <ProductMap allProducts={allProducts} currentPage={currentPage}/>
+                <Pagination totalPages={totalPages} handleClick={handleClick}/>
+                </>
+            }
+                    {/* {
                         allProducts.map(data => <ProductsData data={data} key={data._id}/>)
-                    }
+                    } */}
                 </div>
                 </div>
             <Footer/>
