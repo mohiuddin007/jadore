@@ -16,6 +16,7 @@ import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
 import DeliveryTimeAndCost from './components/Delivery/Checkout/DeliveryTimeAndCost';
 import Payment from './components/Delivery/Payment/Payment';
 import YourCart from './components/Delivery/Cart/YourCart';
+import ProductPopUp from './components/Delivery/ProductPopUp/ProductPopUp';
 
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
         </Router>
         <Route path="/verification">
           <Verification/>
+        </Route>
+        <Route path="/popup">
+          <ProductPopUp/>
         </Route>
         <Route path="*">
           <NotFound/>
