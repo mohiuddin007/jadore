@@ -18,7 +18,7 @@ const YourCart = () => {
         edit: true
     };
 
-    
+    //git push
     const handleIncrement =(id)=>{
         const specificProduct = productsInfo.find(pd => pd._id == id);
             // specificProduct.quantity = quantity;
