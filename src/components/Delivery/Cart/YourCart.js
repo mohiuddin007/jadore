@@ -20,21 +20,21 @@ const YourCart = () => {
 
     
     const handleIncrement =(id)=>{
-        console.log(id)
         const specificProduct = productsInfo.find(pd => pd._id == id);
-        // if(specificProduct){
-            console.log(specificProduct)
-            // const foodsIncrement = quantity +
+            // specificProduct.quantity = quantity;
             setQuantity(quantity+1);
             specificProduct.quantity = quantity;
+            // SetProductsInfo(specificProduct.quantity+1)
            
 
-        // }
         
     }
-    const handleDecrement =() => {
-        const foodsDecrement = quantity - 1;
-        setQuantity(foodsDecrement);
+    const handleDecrement =(id) => {
+        const specificProduct = productsInfo.find(pd => pd._id == id);
+            // specificProduct.quantity = quantity;
+            setQuantity(quantity-1);
+            specificProduct.quantity = quantity;
+            // SetProductsInfo(specificProduct.quantity+1)
     }
 
     return (
@@ -61,7 +61,7 @@ const YourCart = () => {
                                     <div className="col-7">
                                         <div className="row text-center">
                                             <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleDecrement(pd._id)}>-</div>
-                                            <div className="col-3 col-md-3 border border-secondary">{pd.quantity}</div>
+                                            <div className="col-3 col-md-3 border border-secondary">{pd.quantity }</div>
                                             <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleIncrement(pd._id)}>+</div>
                                         </div>
 
