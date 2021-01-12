@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import logo from '../../../images/HomePageResources/logo.png';
 import loveIcon from '../../../images/HomePageResources/Group 109.svg';
 import userIcon from '../../../images/HomePageResources/User Panel.svg';
 import cartIcon from '../../../images/HomePageResources/Group 108.svg';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../../../App';
 
 const Navbar = () => {
+    const [productsInfo, SetProductsInfo] = useContext(ProductContext);
     return (
         <nav className="navbar navbar-expand-lg sticky-top navbar-dark navbarBg text-center">
+            <Link to="/">
             <img src={logo} className="navbar-brand logo d-block d-sm-block d-md-none" alt="" />
+            </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +44,10 @@ const Navbar = () => {
                     <li className="nav-item mr-5">
                         <span><img src={loveIcon} className='ml-5 icon' alt="" /></span>
                         <Link to="/cart">
-                        <span><img src={cartIcon} className='ml-5 icon' alt="" /></span>
+                        <span>
+                            <img src={cartIcon} className='ml-5 icon' alt="" />
+                            <sup className="text-success"><b>{productsInfo.length}</b></sup>
+                            </span>
                         </Link>
                         <Link to="/login">
                         <span><img src={userIcon} className='ml-5 icon' alt="" /></span>

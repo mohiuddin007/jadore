@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './YourCart.css';
 import Navbar from '../../Home/Navbar/Navbar';
 import Cart from './Cart';
@@ -8,6 +8,7 @@ import { ProductContext } from '../../../App';
 
 const YourCart = () => {
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
+    const [quantity, setQuantity] = useState(1);
     console.log(productsInfo)
 
     const rating = {
@@ -16,6 +17,26 @@ const YourCart = () => {
         activeColor: "red",
         edit: true
     };
+
+    // let increment;
+    const handleIncrement =(id)=>{
+        console.log(id)
+        const specificProduct = productsInfo.find(pd => pd._id == id);
+        // if(specificProduct){
+            console.log(specificProduct)
+            // const foodsIncrement = quantity +
+            setQuantity(quantity+1);
+            specificProduct.quantity = quantity;
+           
+
+        // }
+        
+    }
+    const handleDecrement =() => {
+        const foodsDecrement = quantity - 1;
+        setQuantity(foodsDecrement);
+    }
+
     return (
         <div className="exploreFoodBg text-white pb-5">
             <Navbar />
@@ -32,16 +53,16 @@ const YourCart = () => {
                             </div>
                             <div className="col-8 p-3 yourCartBody">
                                 <div className="row justify-content-between ml-4">
-                                    <div className="col-7"><h4>{pd.title}</h4></div>
-                                    <div className="col-5"><ReactStars {...rating} /></div>
+                                    <div className="col-6"><h4>{pd.title}</h4></div>
+                                    <div className="col-6"><ReactStars {...rating} /></div>
                                 </div>
                                 <p className="mt-4 ml-5">{pd.price}/piece</p>
                                 <div className="row mt-5 justify-content-between ml-5">
                                     <div className="col-7">
                                         <div className="row text-center">
-                                            <div className="col-md-3 border border-secondary">-</div>
-                                            <div className="col-md-3 border border-secondary">1</div>
-                                            <div className="col-md-3 border border-secondary" >+</div>
+                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleDecrement(pd._id)}>-</div>
+                                            <div className="col-3 col-md-3 border border-secondary">{pd.quantity}</div>
+                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleIncrement(pd._id)}>+</div>
                                         </div>
 
                                     </div>
