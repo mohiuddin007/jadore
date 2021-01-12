@@ -36,6 +36,7 @@ const Products = () => {
     }
 
    
+  
     return (
         <div className="productsBg text-white">
             <Navbar/>
@@ -55,12 +56,10 @@ const Products = () => {
                 {
                 loading ? <p>Loading...</p> : <>
                 <ProductMap allProducts={allProducts} currentPage={currentPage} filterProduct={filterProduct} search={search}/>
-                <Pagination totalPages={totalPages} handleClick={handleClick}/>
+               <Pagination totalPages={totalPages} handleClick={handleClick}/>
+                
                 </>
             }
-                    {/* {
-                        allProducts.map(data => <ProductsData data={data} key={data._id}/>)
-                    } */}
                 </div>
                 </div>
             <Footer/>

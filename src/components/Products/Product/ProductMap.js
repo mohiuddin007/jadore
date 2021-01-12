@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PRODUCT_PER_PAGE } from '../Constents/Constents';
 import ProductsData from './ProductsData';
 
-const ProductMap = ({allProducts, currentPage, filterProduct, search }) => {
+const ProductMap = ({allProducts, currentPage, filterProduct, search}) => {
     const [searchProduct ,setSearchProduct] = useState([])
 
     // calculation for pagination
@@ -19,13 +19,16 @@ const ProductMap = ({allProducts, currentPage, filterProduct, search }) => {
                   return product.title.toLowerCase().includes(search.toLowerCase())
                })
         )
-      }, [search, selectedProducts])
+      }, [search ])
     return (
         <div className="row justify-content-center pb-5">
             {
                 product.length > 0 ? 
                         product.map(data => <ProductsData data={data} key={data._id}/>) : 
                         searchProduct.map(data => <ProductsData data={data} key={data._id}/>)
+                    }
+                    {
+                        selectedProducts.map(data => <ProductsData data={data} key={data._id}/>)
                     }
         </div>
     );

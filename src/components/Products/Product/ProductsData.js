@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import plusIcon from '../../../images/HomePageResources/Icon_plus_circle.svg';
 import ReactStars from "react-rating-stars-component";
+import { ProductContext } from '../../../App';
 
-const ProductsData = (props) => {
+const ProductsData = (props ) => {
     const { img, title, price } = props.data;
+    const [productsInfo, SetProductsInfo] = useContext(ProductContext);
+    // console.log(productsInfo);
 
     const rating = {
         size: 20,
@@ -11,7 +14,10 @@ const ProductsData = (props) => {
         activeColor: "red",
         edit: true
     };
-
+    const handleAddToCart = (product) => {
+        const newCart = [...productsInfo, product]
+       SetProductsInfo(newCart);
+    }
     return (
         <div className="col-10 col-sm-10 col-md-3 col-lg-3 mt-5 mx-auto">
             <div className="card cardStyles">
@@ -32,7 +38,10 @@ const ProductsData = (props) => {
                             <ReactStars {...rating} />
                         </div>
                         <div className="col-4">
-                            <img src={plusIcon} className="img-fluid plusCircleBtn" alt="" />
+                            {/* <button className="btn" >
+
+                            </button> */}
+                            <img src={plusIcon} className=" img-fluid plusCircleBtn" onClick={() => handleAddToCart(props.data)} alt="" />
                         </div>
                     </div>
                 </div>

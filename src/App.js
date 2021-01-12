@@ -16,10 +16,14 @@ import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
 import DeliveryTimeAndCost from './components/Delivery/Checkout/DeliveryTimeAndCost';
 import Payment from './components/Delivery/Payment/Payment';
 import YourCart from './components/Delivery/Cart/YourCart';
+import { createContext, useState } from 'react';
 
+export const ProductContext = createContext()
 
 function App() {
+const [productsInfo, SetProductsInfo] = useState([]);
   return (
+    <ProductContext.Provider value={[productsInfo, SetProductsInfo]}>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -60,7 +64,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-
+    </ProductContext.Provider>
 
   );
 }
