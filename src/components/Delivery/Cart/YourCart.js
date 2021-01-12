@@ -18,7 +18,7 @@ const YourCart = () => {
         edit: true
     };
 
-    // let increment;
+    
     const handleIncrement =(id)=>{
         console.log(id)
         const specificProduct = productsInfo.find(pd => pd._id == id);
