@@ -1,0 +1,24 @@
+
+.showCart {
+    transform: translateX(0);
+}
+.cart{
+    position: fixed;
+    top: 20%;
+    right: 0;
+    width: 23%;
+    height: 65%;
+    overflow: scroll;
+    z-index: 3;
+    background: #434343;
+    padding: 1.5rem;
+    transition: var(--mainTransition);
+    /* transform: translateX(100%); */
+}
+
+.floatingCartImg{
+    height: 80px;
+}
+.floatingCartBody{
+    background: ;
+}

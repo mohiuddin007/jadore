@@ -6,6 +6,7 @@ import Navbar from '../../Home/Navbar/Navbar';
 import ProductMap from './ProductMap';
 import { PRODUCT_PER_PAGE } from '../Constents/Constents';
 import Pagination from './Pagination';
+import FloatingCard from '../../FloatingCard/FloatingCard';
 
 const Products = () => {
     // state for pagination
@@ -61,6 +62,7 @@ const Products = () => {
                 </>
             }
                 </div>
+                <FloatingCard/>
                 </div>
             <Footer/>
         </div>
