@@ -77,7 +77,6 @@ const updateProductInfo = (id,quan) =>{
       </Switch>
     </Router>
     </ProductContext.Provider>
-    // ssdfsdf
 
   );
 }

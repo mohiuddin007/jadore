@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Payment.css';
 import Navbar from '../../Home/Navbar/Navbar';
 import mobileBanking from '../../../images/Rectangle 92.png';
@@ -7,13 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from 'react-hook-form';
 import Cart from '../Cart/Cart';
+import { ProductContext } from '../../../App';
 
 const Payment = () => {
+    const [productsInfo, SetProductsInfo] = useContext(ProductContext);
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmit = (data, event) => {
+        SetProductsInfo([])
         console.log(data)
         alert('Your order is recorded. Please wait for delivery.')
+        
     };
     return (
         <div className="exploreFoodBg text-white pb-5">
