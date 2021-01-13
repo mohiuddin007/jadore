@@ -14,24 +14,29 @@ const ProductPopUp = () => {
     edit: true,
   };
   const { register, handleSubmit, watch, errors } = useForm();
-  const [dropdown, setDropdown] = useState();
-  const [radio, setRadio] = useState();
-  const [multipleRadio, setMultipleRadio] = useState([]);
-  const [text, setText] = useState({
+
+  const [allData, setAllData] = useState({
     textArea: "",
+    dropDown: "",
+
+    checkedButton: [],
   });
-  const { textArea } = text;
+  const { textArea } = allData;
+
   const onTextChange = (e) => {
-    setText({ ...text, [e.target.name]: e.target.value });
+    setAllData({ ...allData, [e.target.name]: e.target.value });
     // console.log(e.target.value);
   };
+  console.log(allData);
 
-  //   console.log(radio);
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    // const getState = {...multipleRadio}
-    setMultipleRadio([{ ...multipleRadio, [name]: value }]);
-    console.log(value);
+    let { name, value } = e.target;
+    let { checkedButton } = { ...allData };
+    checkedButton.push({ name, value });
+    console.log(checkedButton);
+    // setAllData({ ...allData, checkedButton });
+    setAllData({ ...allData, checkedButton });
+    console.log({ ...allData });
   };
 
   return (
@@ -60,13 +65,13 @@ const ProductPopUp = () => {
                 <div className="row mt-5 justify-content-between ml-5">
                   <div className="col-7">
                     <div className="row text-center">
-                      <div className="col-md-3 border border-secondary text-light">
+                      <div className=" col-md-3 border border-secondary text-light">
                         -
                       </div>
-                      <div className="col-md-3 border border-secondary text-light">
+                      <div className=" col-md-3 border border-secondary text-light">
                         1
                       </div>
-                      <div className="col-md-3 border border-secondary text-light">
+                      <div className=" col-md-3 border border-secondary text-light">
                         +
                       </div>
                     </div>
@@ -88,9 +93,9 @@ const ProductPopUp = () => {
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios21"
-                  value="+USD 7.00"
+                  value="+USD 9.00"
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setAllData({ ...allData, [e.target.name]: e.target.value });
                   }}
                 />
                 <label
@@ -117,7 +122,7 @@ const ProductPopUp = () => {
                   id="exampleRadios22"
                   value="+USD 7.00"
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setAllData({ ...allData, [e.target.name]: e.target.value });
                   }}
                 />
                 <label
@@ -131,7 +136,7 @@ const ProductPopUp = () => {
                 <label className="text-light">+USD 7.00</label>
               </div>
             </div>
-            {/* abar add korbo */}
+
             <br />
 
             <div className="row justify-content-between">
@@ -143,7 +148,7 @@ const ProductPopUp = () => {
                   id="exampleRadios23"
                   value="+USD 7.00"
                   onChange={(e) => {
-                    setRadio(e.target.value);
+                    setAllData({ ...allData, [e.target.name]: e.target.value });
                   }}
                 />
                 <label
@@ -166,11 +171,10 @@ const ProductPopUp = () => {
               <div className="form-check col-5 ml-3">
                 <input
                   className="form-check-input"
-                  type="radio"
+                  type="checkbox"
                   name="sdfsd"
                   id="exampleRadios69"
-                  //   checked={radio === "+USD 7.00"}
-                  value={"+USD 7.00"}
+                  value="+USD 7.00"
                   onChange={handleChange}
                 />
                 <label
@@ -190,10 +194,11 @@ const ProductPopUp = () => {
               <div className="form-check col-5 ml-3">
                 <input
                   className="form-check-input"
-                  type="radio"
+                  type="checkbox"
                   name="Rcdcdde"
                   id="exampleRadios62"
                   //   checked={radio === "+USD 7.00"}
+
                   value="+USD 7.00"
                   onChange={handleChange}
                 />
@@ -214,11 +219,12 @@ const ProductPopUp = () => {
               <div className="form-check col-5 ml-3">
                 <input
                   className="form-check-input"
-                  type="radio"
+                  type="checkbox"
                   name="examp"
                   id="exampleRadios72"
                   //   checked={radio === "+USD 7.00"}
-                  value={"+USD 7.00"}
+
+                  value="+USD 9.00"
                   onChange={handleChange}
                 />
                 <label
@@ -244,7 +250,7 @@ const ProductPopUp = () => {
                   id="exampleFormControlTextarea1"
                   placeholder="write here"
                   rows="3"
-                  name="textArea1"
+                  name="textArea"
                   value={textArea}
                   onChange={(e) => onTextChange(e)}
                 ></textarea>
@@ -252,15 +258,19 @@ const ProductPopUp = () => {
             </form>
             <br />
             {/* DropDown */}
-            <Form>
+            {/* <Form>
               <Form.Group controlId="exampleForm.SelectCustomSizeSm">
                 <h2 className="text-light">If this product is not available</h2>
                 <Form.Control
                   as="select"
                   size="sm"
                   custom
+                  name="dropDown"
                   onChange={(e) => {
-                    setDropdown(e.target.value);
+                    setAllData({
+                      ...allData,
+                      [e.target.name]: e.target.value,
+                    });
                   }}
                 >
                   <option value="Select one">Select one</option>
@@ -271,7 +281,7 @@ const ProductPopUp = () => {
                 </Form.Control>
               </Form.Group>
             </Form>
-            <br />
+            <br /> */}
             <button
               type="submit"
               className="btn btn-success btn-block rounded-pill mt-2 checkoutBtn"
@@ -281,8 +291,6 @@ const ProductPopUp = () => {
           </div>
         </div>
       </div>
-
-      {/* </div> */}
     </form>
   );
 };
