@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ProductContext } from '../../../App';
 
 const Cart = () => {
@@ -31,7 +32,10 @@ const Cart = () => {
                 <div className="col-7"><h4>Total</h4></div>
                 <div className="col-5"><h4 className="text-danger">${grandTotal}</h4> </div>
             </div>
+            <Link to="/deliveryAddress">
             <button className="btn btn-success btn-block rounded-pill mt-2 checkoutBtn">Checkout</button>
+            </Link>
+            
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Pagination = ({ totalPages, handleClick }) => {
   const pages = [...Array(totalPages).keys()].map(num => num + 1);
@@ -7,7 +8,7 @@ const Pagination = ({ totalPages, handleClick }) => {
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           {pages.map(num => (
-            <li class="page-item"><a class="page-link" href="" key={num} onClick={() => handleClick(num)}>{num}</a></li>
+            <li class="page-item"><Link class="page-link" to="" key={num} onClick={() => handleClick(num)}>{num}</Link></li>
 
           ))
           }

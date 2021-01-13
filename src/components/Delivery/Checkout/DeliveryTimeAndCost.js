@@ -1,13 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../../Home/Navbar/Navbar';
 import Cart from '../Cart/Cart';
 
 const DeliveryTimeAndCost = () => {
     const { register, handleSubmit, watch, errors } = useForm();
+    const history = useHistory();
 
     const onSubmit = (data, event) => {
         console.log(data)
+           history.push('/payment')
     };
     return (
         <div className="exploreFoodBg text-white pb-5">
@@ -58,7 +61,9 @@ const DeliveryTimeAndCost = () => {
                                 </div>
                             </div>
                             <div className="d-grid gap-2">
+                                {/* <Link to="/payment"> */}
                                 <button type="submit" className="btn btn-danger btn-block rounded-pill py-2 mt-4">Continue</button>
+                                {/* </Link> */}
                                 {/* <input className="btn btn-danger btn-block rounded-pill py-2 mt-4" type="submit" defaultValue="Continue" /> */}
                             </div>
                         </form>

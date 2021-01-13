@@ -13,6 +13,7 @@ const Payment = () => {
 
     const onSubmit = (data, event) => {
         console.log(data)
+        alert('Your order is recorded. Please wait for delivery.')
     };
     return (
         <div className="exploreFoodBg text-white pb-5">
@@ -129,8 +130,8 @@ const Payment = () => {
                                 <label class="custom-control-label" for="customCheck1">Save this card for next use</label>
                             </div>
                             <div className="d-grid gap-2">
-                                <button type="submit" className="btn btn-success btn-block rounded-pill py-2 mt-4 checkoutBtn">Continue</button>
-                                {/* <input className="btn btn-danger btn-block rounded-pill py-2 mt-4" type="submit" defaultValue="Continue" /> */}
+                                {/* <button type="submit" className="btn btn-success btn-block rounded-pill py-2 mt-4 checkoutBtn">Continue</button> */}
+                                <input className="btn btn-danger btn-block rounded-pill py-2 mt-4" type="submit" defaultValue="Submit" />
                             </div>
 
                             

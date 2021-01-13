@@ -3,12 +3,15 @@ import './DeliveryAddress.css';
 import Navbar from '../../Home/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
 import Cart from '../Cart/Cart';
+import { Link, useHistory } from 'react-router-dom';
 
 const DeliveryAddress = () => {
     const { register, handleSubmit, watch, errors } = useForm();
+    const history = useHistory();
 
     const onSubmit = (data, event) => {
         console.log(data)
+        history.push('/deliveryTimeAndCost')
     };
     return (
         <div className="exploreFoodBg text-white">
@@ -108,8 +111,10 @@ const DeliveryAddress = () => {
                                     </div>
                                 </div>
                             </div>
+                           
                             <div className="d-grid gap-2">
-                                <input className="btn btn-danger btn-block rounded-pill py-2 mt-4" type="submit" defaultValue="Login" />
+                                <button type="submit" className="btn btn-danger btn-block rounded-pill py-2 mt-4">Continue</button>
+                                {/* <input className="btn btn-danger btn-block rounded-pill py-2 mt-4" type="submit" defaultValue="Login" /> */}
                             </div>
                         </form>
                     </div>
