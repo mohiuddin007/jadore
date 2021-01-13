@@ -22,6 +22,18 @@ export const ProductContext = createContext()
 
 function App() {
 const [productsInfo, SetProductsInfo] = useState([]);
+
+const updateProductInfo = (id,quan) =>{
+  console.log(id);
+  var newCart = productsInfo.map(pd =>{
+    if(pd._id == id){
+      pd.quantity = quan;
+    }
+    return pd;
+  })
+  SetProductsInfo(newCart);
+  console.log(productsInfo)
+}
   return (
     <ProductContext.Provider value={[productsInfo, SetProductsInfo]}>
     <Router>
@@ -42,7 +54,7 @@ const [productsInfo, SetProductsInfo] = useState([]);
           <Payment/>
         </Route>
         <Route path="/cart">
-          <YourCart/>
+          <YourCart updateProductInfo={updateProductInfo}/>
         </Route>
         <Route path="/login">
           <Login />

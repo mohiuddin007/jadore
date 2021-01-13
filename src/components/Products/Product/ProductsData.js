@@ -15,6 +15,7 @@ const ProductsData = (props ) => {
         edit: true
     };
     const handleAddToCart = (product) => {
+        product.quantity = 1;
         const newCart = [...productsInfo, product]
        SetProductsInfo(newCart);
     }
