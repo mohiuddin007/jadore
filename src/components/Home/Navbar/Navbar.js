@@ -21,10 +21,10 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mx-auto">
                     <li className="nav-item active mr-md-5 mr-0 mx-5 mx-md-0">
-                        <a className="nav-link" href="/products">All Items</a>
+                        <Link className="nav-link" to="/products">All Items</Link>
                     </li>
                     <li className="nav-item mx-5">
-                        <a className="nav-link" href="#">Most Popular</a>
+                        <Link className="nav-link" to="/">Most Popular</Link>
                     </li>
                     <li className="nav-item mx-5">
                         <Link to="/">

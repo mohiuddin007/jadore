@@ -2,14 +2,11 @@ import React, { useContext, useState } from 'react';
 import './YourCart.css';
 import Navbar from '../../Home/Navbar/Navbar';
 import Cart from './Cart';
-import burger from '../../../images/HomePageResources/Burger2 1.png';
 import ReactStars from "react-rating-stars-component";
 import { ProductContext } from '../../../App';
 
-const YourCart = () => {
+const YourCart = (props) => {
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
-    const [quantity, setQuantity] = useState(1);
-    console.log(productsInfo)
 
     const rating = {
         size: 20,
@@ -18,24 +15,7 @@ const YourCart = () => {
         edit: true
     };
 
-    //git push
-    const handleIncrement =(id)=>{
-        const specificProduct = productsInfo.find(pd => pd._id == id);
-            // specificProduct.quantity = quantity;
-            setQuantity(quantity+1);
-            specificProduct.quantity = quantity;
-            // SetProductsInfo(specificProduct.quantity+1)
-           
-
-        
-    }
-    const handleDecrement =(id) => {
-        const specificProduct = productsInfo.find(pd => pd._id == id);
-            // specificProduct.quantity = quantity;
-            setQuantity(quantity-1);
-            specificProduct.quantity = quantity;
-            // SetProductsInfo(specificProduct.quantity+1)
-    }
+    
 
     return (
         <div className="exploreFoodBg text-white pb-5">
@@ -60,13 +40,13 @@ const YourCart = () => {
                                 <div className="row mt-5 justify-content-between ml-5">
                                     <div className="col-7">
                                         <div className="row text-center">
-                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleDecrement(pd._id)}>-</div>
+                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity-1))}>-</div>
                                             <div className="col-3 col-md-3 border border-secondary">{pd.quantity }</div>
-                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> handleIncrement(pd._id)}>+</div>
+                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity+1))}>+</div>
                                         </div>
 
                                     </div>
-                                    <div className="col-5"><h4 className="text-center text-danger">{pd.price}</h4></div>
+                                    <div className="col-5"><h4 className="text-center text-danger">{(pd.price * pd.quantity).toFixed(2)}</h4></div>
                                 </div>
 
                             </div>
