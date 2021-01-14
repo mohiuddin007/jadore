@@ -41,7 +41,7 @@ const FloatingCard = (props) => {
                     {
                         productsInfo.map(pd => <>
 
-                            <div className="row mt-3 yourCart">
+                            <div className="row mt-3 yourCart  text-white">
                                 <div className="col-4 bg-warning cartImgBorder">
                                     <img src={pd.img} className="img-fluid mx-auto floatingCartImg" alt="" />
                                 </div>
@@ -74,7 +74,7 @@ const FloatingCard = (props) => {
                     <div>
                         <div className="row mt-4">
                             <div className="col-6">
-                                <p>Sub Total: </p>
+                                <p className="text-white">Sub Total: </p>
                             </div>
                             <div className="col-6">
                                 <p className="text-danger text-center">$ {total.toFixed(2)}</p>

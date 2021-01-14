@@ -10,7 +10,7 @@ const FoodsData = (props) => {
 
     const rating = {
         size: 20,
-        value: 2,
+        value: 5,
         activeColor: "red",
         edit: true
       };

@@ -1,4 +1,5 @@
 import React from 'react';
+import FloatingCard from '../../FloatingCard/FloatingCard';
 import CustomersReview from '../Carousel/CustomersReview';
 import ExploreFoods from '../ExploreOurFoods/ExploreFoods';
 import Footer from '../Footer/Footer';
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Navbar/>
             <Header/>
+            <FloatingCard/>
             <ExploreFoods/>
             <CustomersReview/>
             <Location/>
