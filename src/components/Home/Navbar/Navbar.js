@@ -10,7 +10,8 @@ import { ProductContext } from '../../../App';
 const Navbar = () => {
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
     return (
-        <nav className="navbar navbar-expand-lg sticky-top navbar-dark navbarBg text-center">
+        <nav className="navbar navbar-expand-lg sticky-top navbar-dark navbarBg text-center" >
+            {/* style={{height: '60px', paddingTop: '50px'}} */}
             <Link to="/">
             <img src={logo} className="navbar-brand logo d-block d-sm-block d-md-none" alt="" />
             </Link>

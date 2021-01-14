@@ -1,21 +1,46 @@
 
 .showCart {
     transform: translateX(0);
+    
+}
+.closeCart{
+    transform: translateX(100%);
 }
 .cart{
     position: fixed;
-    top: 20%;
+    top: 25%;
     right: 0;
     width: 23%;
     height: 65%;
-    overflow: scroll;
+    overflow-y: scroll;
     z-index: 3;
     background: #434343;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    border-radius: 25px;
     transition: var(--mainTransition);
-    /* transform: translateX(100%); */
+    
 }
 
 .floatingCartImg{
     height: 80px;
+}
+.showCartBtn{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 100px;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+}
+.showPriceBtn{
+    position: fixed;
+    top: 55%;
+    right: 0;
+    width: 100px;
+    background: #F53838;
+    color: rgb(255, 255, 255);
+    z-index: 3;
+}
+.cursor{
+    cursor: pointer;
 }

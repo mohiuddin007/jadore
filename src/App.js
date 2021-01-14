@@ -40,10 +40,10 @@ const updateProductInfo = (id,quan) =>{
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home updateProductInfo={updateProductInfo}/>
         </Route>
         <Route path="/products">
-          <Products/>
+          <Products updateProductInfo={updateProductInfo}/>
         </Route>
         <Route path="/deliveryAddress">
           <DeliveryAddress/>

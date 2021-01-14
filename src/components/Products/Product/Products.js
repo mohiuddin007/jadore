@@ -8,7 +8,8 @@ import { PRODUCT_PER_PAGE } from '../Constents/Constents';
 import Pagination from './Pagination';
 import FloatingCard from '../../FloatingCard/FloatingCard';
 
-const Products = () => {
+const Products = (props) => {
+    const updateProductInfo = props.updateProductInfo;
     // state for pagination
      const [allProducts, setAllProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -62,7 +63,7 @@ const Products = () => {
                 </>
             }
                 </div>
-                <FloatingCard/>
+                <FloatingCard updateProductInfo={updateProductInfo}/>
                 </div>
             <Footer/>
         </div>

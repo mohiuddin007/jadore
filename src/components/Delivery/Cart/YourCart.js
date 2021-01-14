@@ -4,6 +4,8 @@ import Navbar from '../../Home/Navbar/Navbar';
 import Cart from './Cart';
 import ReactStars from "react-rating-stars-component";
 import { ProductContext } from '../../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const YourCart = (props) => {
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
@@ -15,7 +17,11 @@ const YourCart = (props) => {
         edit: true
     };
 
-    
+    const deleteProduct = (productId) => {
+        const floatingCartProduct = productsInfo.filter( pd => pd._id !== productId);
+ 
+        SetProductsInfo(floatingCartProduct)
+     }
 
     return (
         <div className="exploreFoodBg text-white pb-5">
@@ -34,15 +40,16 @@ const YourCart = (props) => {
                             <div className="col-8 p-3 yourCartBody">
                                 <div className="row justify-content-between ml-4">
                                     <div className="col-6"><h4>{pd.title}</h4></div>
-                                    <div className="col-6"><ReactStars {...rating} /></div>
+                                    <div className="col-4"><ReactStars {...rating} /></div>
+                                    <div className="cursor" onClick={() => deleteProduct(pd._id)} > <FontAwesomeIcon icon={faTrashAlt} /></div>
                                 </div>
                                 <p className="mt-4 ml-5">{pd.price}/piece</p>
                                 <div className="row mt-5 justify-content-between ml-5">
                                     <div className="col-7">
                                         <div className="row text-center">
-                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity-1))}>-</div>
-                                            <div className="col-3 col-md-3 border border-secondary">{pd.quantity }</div>
-                                            <div className="col-3 col-md-3 border border-secondary" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity+1))}>+</div>
+                                            <div className="col-3 col-md-3 border border-secondary cursor" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity-1))}>-</div>
+                                            <div className="col-3 col-md-3 border border-secondary cursor">{pd.quantity }</div>
+                                            <div className="col-3 col-md-3 border border-secondary cursor" onClick={()=> props.updateProductInfo(pd._id, (pd.quantity+1))}>+</div>
                                         </div>
 
                                     </div>
