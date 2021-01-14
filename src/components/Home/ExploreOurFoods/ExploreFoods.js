@@ -17,6 +17,8 @@ useEffect(()=>{
     })
 },[])
 
+
+
     return (
         <div className="exploreFoodBg pb-5 text-white">
             <div className="container pt-5">
@@ -36,6 +38,8 @@ useEffect(()=>{
                     {
                         first8Food.map(data => <FoodsData data={data} key={data._id}/>)
                     }
+                   
+        
                 </div>
                 </div>
                 <div className="row justify-content-end">

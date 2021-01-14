@@ -1,71 +1,64 @@
-import './App.css';
-import Login from './components/Authentication/Login/Login';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import SignUp from './components/Authentication/SignUp/SignUp';
-import ForgetPassword from './components/Authentication/ForgetPassword/ForgetPassword';
-import CreateNewPassword from './components/Authentication/CreateNewPassword/CreateNewPassword';
-import Verification from './components/Authentication/Verification/Verification';
-import Home from './components/Home/Home/Home';
-import NotFound from './components/NotFound/NotFound';
-import Products from './components/Products/Product/Products';
-import DeliveryAddress from './components/Delivery/Checkout/DeliveryAddress';
-import DeliveryTimeAndCost from './components/Delivery/Checkout/DeliveryTimeAndCost';
-import Payment from './components/Delivery/Payment/Payment';
-import YourCart from './components/Delivery/Cart/YourCart';
-import ProductPopUp from './components/Delivery/ProductPopUp/ProductPopUp';
-
+import "./App.css";
+import Login from "./components/Authentication/Login/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SignUp from "./components/Authentication/SignUp/SignUp";
+import ForgetPassword from "./components/Authentication/ForgetPassword/ForgetPassword";
+import CreateNewPassword from "./components/Authentication/CreateNewPassword/CreateNewPassword";
+import Verification from "./components/Authentication/Verification/Verification";
+import Home from "./components/Home/Home/Home";
+import NotFound from "./components/NotFound/NotFound";
+import Products from "./components/Products/Product/Products";
+import DeliveryAddress from "./components/Delivery/Checkout/DeliveryAddress";
+import DeliveryTimeAndCost from "./components/Delivery/Checkout/DeliveryTimeAndCost";
+import Payment from "./components/Delivery/Payment/Payment";
+import YourCart from "./components/Delivery/Cart/YourCart";
+import ProductPopUp from "./components/Delivery/ProductPopUp/ProductPopUp";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route path="/products">
-          <Products/>
+          <Products />
         </Route>
         <Route path="/deliveryAddress">
-          <DeliveryAddress/>
+          <DeliveryAddress />
         </Route>
         <Route path="/deliveryTimeAndCost">
-          <DeliveryTimeAndCost/>
+          <DeliveryTimeAndCost />
         </Route>
         <Route path="/payment">
-          <Payment/>
+          <Payment />
         </Route>
         <Route path="/cart">
-          <YourCart/>
+          <YourCart />
         </Route>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/signUp">
-          <SignUp/>
+          <SignUp />
         </Route>
         <Router path="/forgetPassword">
-          <ForgetPassword/>
+          <ForgetPassword />
         </Router>
         <Router path="/createNewPassword">
-          <CreateNewPassword/>
+          <CreateNewPassword />
         </Router>
         <Route path="/verification">
-          <Verification/>
+          <Verification />
         </Route>
         <Route path="/popup">
-          <ProductPopUp/>
+          <ProductPopUp />
         </Route>
         <Route path="*">
-          <NotFound/>
+          <NotFound />
         </Route>
       </Switch>
     </Router>
-
-
   );
 }
 
