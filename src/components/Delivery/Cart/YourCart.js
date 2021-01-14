@@ -18,9 +18,6 @@ const YourCart = (props) => {
         edit: true
     };
 
-    useEffect(()=>{
-        
-    })
 
     // let increment;
     // const handleIncrement =(id)=>{

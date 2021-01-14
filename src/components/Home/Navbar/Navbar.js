@@ -10,13 +10,13 @@ import ScriptTag from 'react-script-tag';
 const Navbar = () => {
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
 
-    const Demo = props => (
-        <ScriptTag type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
-        )
+    // const Demo = props => (
+    //     <ScriptTag type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
+    //     )
 
-        function googleTranslateElementInit() {
-            new Demo.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-          }
+    //     function googleTranslateElementInit() {
+    //         new Demo.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+    //       }
 
    
     return (
@@ -45,7 +45,7 @@ const Navbar = () => {
                         {/* <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Language
                                  </a> */}
-                                 <div id="google_translate_element"></div>
+                                 {/* <div id="google_translate_element"></div> */}
                         {/* <div className="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                             <a className="dropdown-item text-white" href="#">France</a>
                             <a className="dropdown-item text-white" href="#">English</a>
