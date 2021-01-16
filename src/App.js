@@ -18,6 +18,7 @@ import Payment from './components/Delivery/Payment/Payment';
 import YourCart from './components/Delivery/Cart/YourCart';
 import { createContext, useState } from 'react';
 import FloatingCard from './components/FloatingCard/FloatingCard';
+import ProductPopUp from './components/Delivery/ProductPopUp/ProductPopUp';
 
 export const ProductContext = createContext()
 
@@ -74,6 +75,9 @@ const updateProductInfo = (id,quan) =>{
         </Route>
         <Route path="/floatingCard">
           <FloatingCard updateProductInfo={updateProductInfo}/>
+        </Route>
+        <Route path="/popup">
+          <ProductPopUp />
         </Route>
         <Route path="*">
           <NotFound/>

@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import plusIcon from '../../../images/HomePageResources/Icon_plus_circle.svg';
 import ReactStars from "react-rating-stars-component";
 import { ProductContext } from '../../../App';
+import ProductPopUp from '../../Delivery/ProductPopUp/ProductPopUp';
 
 const ProductsData = (props ) => {
     const { img, title, price } = props.data;
@@ -14,6 +15,18 @@ const ProductsData = (props ) => {
         activeColor: "red",
         edit: true
     };
+
+    //react modal package
+    const [modalIsOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    // product add to cart function 
     const handleAddToCart = (product) => {
         product.quantity= 1;
         const newCart = [...productsInfo, product]
@@ -21,7 +34,7 @@ const ProductsData = (props ) => {
     }
     return (
         <div className="col-10 col-sm-10 col-md-3 col-lg-3 mt-5 mx-auto">
-            <div className="card cardStyles">
+            <div className="card cardStyles" onClick={openModal}>
                 <img src={img} className="card-img-top mx-auto d-block img-fluid" alt="" />
                 <div class="card-body cardBodyStyles">
                     <div className="row">
@@ -46,7 +59,11 @@ const ProductsData = (props ) => {
                         </div>
                     </div>
                 </div>
-
+                <ProductPopUp
+                    modalIsOpen={modalIsOpen}
+                    closeModal={closeModal}
+                >
+</ProductPopUp>
             </div>
         </div>
     );

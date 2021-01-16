@@ -29,7 +29,7 @@ const Login = () => {
                     
                 </div>
                 <div className="col-md-6 pt-5">
-                    <h4 className="text-center pt-5 mb-4">Login or SingUp</h4>
+                    <h4 className="text-center pt-5 mb-4">Login or Sign Up</h4>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-3">
