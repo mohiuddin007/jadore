@@ -15,8 +15,11 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "gray",
-    // height: "90%",
+   backgroundColor: '',
+   border:'none'
+
+ 
+   
   },
 };
 Modal.setAppElement("#root");
@@ -28,6 +31,7 @@ const ProductPopUp = ({ modalIsOpen, closeModal }) => {
     activeColor: "red",
     edit: true,
   };
+
 
   const [allData, setAllData] = useState({
     textArea: "",
@@ -67,6 +71,9 @@ const ProductPopUp = ({ modalIsOpen, closeModal }) => {
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel="Example Modal"
+     
+      
+    
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="container">
