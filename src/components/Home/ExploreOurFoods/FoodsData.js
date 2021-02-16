@@ -6,7 +6,7 @@ import { ProductContext } from '../../../App';
 import ProductPopUp from '../../Delivery/ProductPopUp/ProductPopUp';
 
 const FoodsData = (props) => {
-    const { img, title, price } = props.data;
+    const { image,name,description,price } = props.data;
     const [productsInfo, SetProductsInfo] = useContext(ProductContext);
 
     const rating = {
@@ -37,18 +37,18 @@ const FoodsData = (props) => {
         <div className="col-10 col-sm-10 col-md-3 mt-5 mx-auto">
            
             <div className="card cardStyles" onClick={openModal}>
-                <img src={img} className="card-img-top mx-auto d-block img-fluid" alt="" />
+                <img src={image} className="card-img-top mx-auto d-block img-fluid" alt="" />
                 <div class="card-body cardBodyStyles">
                     <div className="row">
                         <div className="col-8">
-                            <h6 className="card-title text-left">{title}</h6>
+                            <h6 className="card-title text-left">{name}</h6>
                         </div>
                         <div className="col-4">
                             <h6 className="text-danger text-right">${price}</h6>
                         </div>
 
                     </div>
-                    <p className="card-text">Lorem ipsum dolor sit amet, consectetu</p>
+                    <p className="card-text">{description}</p>
                     <div className="row">
                         <div className="col-8">
                             <ReactStars {...rating} />

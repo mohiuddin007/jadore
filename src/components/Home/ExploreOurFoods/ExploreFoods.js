@@ -17,10 +17,10 @@ const [searchResult, setSearchResult] = useState([]);
 
 
 useEffect(()=>{
-    fetch('https://hot-onion.herokuapp.com/api/v1/foods')
+    fetch('https://backendjadore.softifydigital.com/api/showfeature')
     .then(res => res.json())
     .then(data => {
-        setFoods(data.data.foods);
+        setFoods(data.data);
     })
 },[])
 

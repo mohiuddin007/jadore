@@ -11,31 +11,32 @@ import FloatingCard from '../../FloatingCard/FloatingCard';
 const Products = (props) => {
     const updateProductInfo = props.updateProductInfo;
     // state for pagination
-     const [allProducts, setAllProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
-
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [totalPages, setTotalPages] = useState(0);
+    const [allProducts, setAllProducts] = useState([]);
     //state for search and filter
     const [filterProduct, setFilterProduct] = useState('');
     const [search, setSearch] = useState('');
+
+
+
+
     
-    useEffect(()=>{
     const fetchProducts = async () => {
         setLoading(true);
-
-        const res = await axios.get('https://hot-onion.herokuapp.com/api/v1/foods')
+        const res = await axios.get('https://backendjadore.softifydigital.com/api/showfeature')
         setLoading(false);
-        setAllProducts(res.data.data.foods);
-
-        setTotalPages(Math.ceil(res.data.data.foods.length / PRODUCT_PER_PAGE))
+        setAllProducts(res.data.data);
+        // setTotalPages(Math.ceil(res.data.data.foods.length / PRODUCT_PER_PAGE))
     }
-    fetchProducts();
+    
+    useEffect(()=>{
+        fetchProducts();
     },[])
-
-    const handleClick = (num) => {
-        setCurrentPage(num);
-    }
+    // const handleClick = (num) => {
+    //     setCurrentPage(num);
+    // }
 
    
   
@@ -56,11 +57,17 @@ const Products = (props) => {
             <div className="container">
                 <div className="row justify-content-center pb-5">
                 {
-                loading ? <p>Loading...</p> : <>
-                <ProductMap allProducts={allProducts} currentPage={currentPage} filterProduct={filterProduct} search={search}/>
-               <Pagination totalPages={totalPages} handleClick={handleClick}/>
+                loading ? <p>Loading...</p> : 
+                    <ProductMap filterProduct={filterProduct} search={search}/>
+                    
+
                 
-                </>
+                
+            //    {/*
+            //    currentPage={currentPage}
+            //    <Pagination totalPages={totalPages} handleClick={handleClick}/> */}
+                
+                
             }
                 </div>
                 <FloatingCard updateProductInfo={updateProductInfo}/>
